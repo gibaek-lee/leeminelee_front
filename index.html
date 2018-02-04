@@ -5,13 +5,70 @@
     <title>예제</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!--sr-only 스크린리더 옵션. fontawesome이미지 로딩이 느려질때 화면에 대체글자가 출력되지 않게 하는 설정-->
+    <style>
+      .sr-only{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+      }
+    </style>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <div class="container">
+        <nav class="item headA">
+          <ul>
+            <li><a href="#">스튜디오 리미네리</a></li>
+            <li><a href="#">소개합니다</a>
+              <ul>
+                <li><a href="#">작가 소개</a></li>
+                <li><a href="#">고객 이야기</a></li>
+              </ul>
+            </li>
+            <li><a href="#">필름웨딩사진</a></li>
+            <li><a href="#">청첩장</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">문의하기</a></li>
+          </ul>
+        </nav>
+        <div class="item headB">
+          <img src="img/logo.svg" alt="leeminelee">
+        </div>
+      </div>
+    </header>
     <section class="conA">
       <div class="container">
         <!--<h1>LEEMINELEE</h1>-->
         <p>필름 사진 찍고 디자인하는<br>스튜디오 리미네리입니다.</p>
       </div>
     </section>
+    <section class="conB">
+      <div class="container">
+        <div class="item itemA">
+          <p><span>문의하기</span><br><br><span>카카오톡</span> | 플러스 친구 @리미네리<br><span>상담시간</span> | 매일 11시 부터 18시 까지<br><br>카카오톡으로 연락주시면<br>가장 빠르게 답변 받아보실 수 있습니다.</p>
+        </div>
+        <nav class="item itemB">
+          <ul>
+            <li><a href="#"><span class="fab fa-blogger" title="blog"></span></a></li>
+            <li><a href="#"><span class="fab fa-instagram" title="instagram"></span></a></li>
+            <li><a href="#"><span class="fab fa-facebook-square" title="facebook"></span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footA">
+          <p>&copy;2018. STUDIO LEEMINELEE. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
