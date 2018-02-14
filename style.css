@@ -97,11 +97,8 @@ p{
 
 .conB a{
   color:var(--icon-bright-color);
-  opacity: 0.8;
-  font-size: 40px;
-}
-.conB a:hover{
   opacity: 1;
+  font-size: 40px;
 }
 
 @media (max-width:359px){
@@ -126,7 +123,15 @@ p{
   }
   /*container 안의 item 정렬*/
   .conB .item{
-    flex: auto;/*item들이 1:1로 container안 넓이 가짐*/
+    flex: auto;
+  }
+}
+@media (min-width:415px){
+  .conB a{
+    opacity: 0.8;
+  }
+  .conB a:hover{
+    opacity: 1;
   }
 }
 @media (min-width:495px){
@@ -160,9 +165,9 @@ header .container{
   padding-top: 55px;
   padding-bottom: 35px;
   display: flex;
-  /*align-items: baseline;
-  justify-content: space-between;
-  vertical-align: bottom;*/
+  max-width: var(--large-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 header .item{
   flex:1;
@@ -176,7 +181,7 @@ header .item{
 }
 
 .headA ul{
-  margin-left: 116px;
+  margin-left: 16px;/*31px(guideline narrow)-15px(ul li margin left)*/
   display: flex;
 }
 
@@ -184,7 +189,7 @@ header .item{
   writing-mode:tb-rl;
   margin-left: 15px;
   font-weight: var(--font-weight-extrabold);
-  color:var(--text-dark-color:#58585b);
+  color:var(--text-dark-color);
 }
 
 .headA a{
@@ -195,11 +200,80 @@ header .item{
 }
 
  /*headB: svg log 이미지 absolute positioning*/
-header .headB{
+.headB{
   position:relative;
 }
-header img{
+
+.headB img{
   position:absolute;
-  right:var(--guideline-wideAddnarrow);
+  right:var(--guideline-narrow);
   bottom:0;
+}
+
+ /*head media*/
+@media (max-width:767px){
+  .headA{
+    display: none;/*작은화면에서는 리스트메뉴가 안보이게*/
+  }
+  .headB img{
+    width:100px;
+  }
+  .headC{
+    margin-left:var(--guideline-narrow);
+    padding: 0;
+    border:none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    color:var(--text-dark-color);
+    opacity: 0.8;
+    cursor:pointer;
+  }
+  .headC:hover{
+    opacity: 1;
+  }
+  .headD ul{
+    display: flex;
+    margin-left: 16px;
+  }
+  .headD a{
+    display: block;
+    color:var(--text-dark-color);
+    font-weight: var(--font-weight-extrabold);
+    text-decoration: none;
+    line-height: 2em;
+    text-align: center;
+    margin-left: 15px;
+    opacity: 0.8;
+  }
+  .headD a:hover{
+    opacity: 1;
+  }
+  .headD{
+    display: none;/*초기화면에서 안보이게*/
+    position: absolute;
+    top:108.75px;
+    left:0;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(255,255,255,0.2);
+  }
+}
+
+@media (min-width:768px){
+  .headA{
+    display: block !important;/*토글버튼 사용하다보면 리스트메뉴가 안나타나는 경우가 있어 방지하기*/
+  }
+  .headA ul{
+    margin-left: 116px;/*131px(guideline wideaddnarrow)-15px(ul li margin left)*/
+  }
+  .headB img{
+    right:var(--guideline-wideAddnarrow);
+  }
+  .headC{
+    display: none;/*큰화면에서는 토글버튼이 안보이게*/
+  }
+  .headD{
+    display: none;
+  }
 }

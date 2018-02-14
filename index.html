@@ -19,10 +19,21 @@
       }
     </style>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $(".headC").click(function(){
+          $(".headD").slideToggle();
+        })
+      });
+    </script>
   </head>
   <body>
     <header>
       <div class="container">
+        <button type="button" class="headC">
+          <span class="fa fa-bars" title="MENU"></span><!--item class명을 쓰지 않는다. flex:1이 지정되지 않아야 버튼크기 그대로 출력된다--><!--작은화면 toggle button-->
+        </button>
         <nav class="item headA">
           <ul>
             <li><a href="#">스튜디오 리미네리</a></li>
@@ -44,6 +55,15 @@
           <img src="img/logo.svg" alt="logo">
         </div>
       </div>
+      <nav class="headD">
+        <ul>
+          <li><a href="#">소개</a></li>
+          <li><a href="#">필름</a></li>
+          <li><a href="#">청첩장</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">문의</a></li>
+        </ul>
+      </nav><!--작은화면에서 navigation-->
     </header>
     <section class="conA">
       <div class="container">
