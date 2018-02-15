@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css); 다개발하고적용하기*/
+/*@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);*/
 /*guide line width: wide=100px narrow=31px*/
 
 /*기본색*/
@@ -7,6 +7,7 @@
   --text-bright-color:#ffffff;
   --text-dark-color:#58585b;
   --icon-bright-color:#dbdcde;
+  --verical-line-color:#808284;
   --large-width:1279px;/*페이지 가로 최대너비. 131*2 추가*/
   --guideline-wideAddnarrow:131px;
   --guideline-wide:100px;
@@ -19,7 +20,7 @@
 /*기본 설정: 페이지 전체*/
 body{
   font-family: '맑은 고딕','Apple SD Gothic Neo','sans-serif';
-  /*font-family: 'Nanum Myeongjo', serif; 다개발하고적용하기*/
+  /*font-family: 'Nanum Myeongjo', serif;*/
   margin: 0;
 }
 
@@ -43,6 +44,9 @@ p{
   background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(img/background.png);
   background-position:center;
   background-size: cover;
+  max-width: var(--large-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .conA .container p{
@@ -55,7 +59,7 @@ p{
   letter-spacing: 0.2em;/*em은 폰트크기=1em으로 처리하는 단위, 가로쓰기시 글자와 글자사이 거리*/
 }
 
-  /*반응형 웹 디자인. 주의! 콘텐츠A에 있는 p의 폰스사이즈 설정을 덮어쓰고 있으므로 conA style의 아래에 와야한다*/
+  /*반응형 웹 디자인. 주의! 콘텐츠A에 있는 p의 폰트사이즈 설정을 덮어쓰고 있으므로 conA style의 아래에 와야한다*/
 @media (min-height:500px){
   .conA .container p{
     font-size: 18px;
@@ -63,17 +67,41 @@ p{
 }
 
 /*콘텐츠B: 개요*/
+.conB{
+  position: relative;/*itemC를 포지션 레이아웃(부모 position relative, 자식 position absolute)으로 중앙 이미지쪽으로 위치 지정 위해서*/
+}
 .conB .container{
-  padding-top: 35px;
+  /*padding-top: 35px;*/
   padding-bottom: 200px;
-  /*너무 큰 기기에서 conB의 item들이 너무 벌어지지 않도록 한도를 준다*/
+  max-width: var(--large-width);/*너무 큰 기기에서 conB의 item들이 너무 벌어지지 않도록 한도를 준다*/
+  margin-left: auto;
+  margin-right: auto;
+}
+.conB .itemB{
+  padding-top: 35px;
+}
+.conB .itemA p{/*세로선 만들기 위해 35px+8px**/
+  padding-top: 43px;
+}
+
+ /*conB-small: 메인 이미지 안쪽으로 위치한 paragraph*/
+.conB-small{
+  position: absolute;/*부모가 반드시 relative여야 한다*/
+  right: 0;
+  top: -77px;
+  width: 100%;
+}
+.conB-small .container-small{
   max-width: var(--large-width);
   margin-left: auto;
   margin-right: auto;
 }
+.conB-small p{
+  padding-bottom: 35px;/*세로선 만들기 위해*/
+}
+
   /*paragraph*/
 .conB p{
-  margin-top: 8px;/*hero이미지로부터 총 43px 떨어짐*/
   margin-right: var(--guideline-narrow);
   font-size: var(--conBfootA-font-size);
   font-weight: var(--font-weight-bold);
@@ -81,10 +109,15 @@ p{
   color: var(--text-dark-color);
   text-align: right;
   }
-
 .conB p span{
   font-weight:var(--font-weight-extrabold);
 }
+.conB p #contact{
+  border-top-style: solid;
+  border-color: var(--verical-line-color);
+  border-width: 1px;
+}
+
   /*icon list*/
 .conB ul{
   /*margin-top: 35px; container가 padding 가지고 있으므로 삭제*/
@@ -141,8 +174,11 @@ p{
   }
 }
 @media (min-width:768px){
-  .conB p{
-    margin-right: var(--guideline-wideAddnarrow);
+  .conB p{/*paragrph까지 3px이 더 들어간 것 같음*/
+    margin-right: var(--guideline-wide);
+    padding-right: var(--guideline-narrow);
+    border-right-style: solid;
+    border-color: var(--verical-line-color);
   }
   .conB ul{
     margin-left: var(--guideline-wideAddnarrow);
@@ -162,7 +198,7 @@ footer .container{
 
 /*헤더*/
 header .container{
-  padding-top: 55px;
+  /*padding-top: 55px;*/
   padding-bottom: 35px;
   display: flex;
   max-width: var(--large-width);
@@ -173,7 +209,7 @@ header .item{
   flex:1;
 }
 
- /*headA: navigation*/
+ /*headA: 큰화면 navigation*/
 .headA a{
   display: block;
   color: var(--text-dark-color);
@@ -181,15 +217,22 @@ header .item{
 }
 
 .headA ul{
-  margin-left: 16px;/*31px(guideline narrow)-15px(ul li margin left)*/
+  padding-top: 55px;
+  border-left-style: solid;
+  border-color: var(--verical-line-color);
   display: flex;
 }
 
 .headA ul li{
   writing-mode:tb-rl;
-  margin-left: 15px;
   font-weight: var(--font-weight-extrabold);
   color:var(--text-dark-color);
+}
+.headA ul .home{
+  margin-left: 30px;
+}
+.headA ul .menu{
+  margin-left: 15px;
 }
 
 .headA a{
@@ -209,6 +252,50 @@ header .item{
   right:var(--guideline-narrow);
   bottom:0;
 }
+ /*headC: 작은기기 toggle button*/
+.headC{
+  margin-top: 55px;
+  margin-left:var(--guideline-narrow);
+  padding: 0;
+  border:none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  color:var(--text-dark-color);
+  opacity: 0.8;
+  cursor:pointer;
+}
+.headC:hover{
+  opacity: 1;
+}
+
+ /*headD: 작은기기에서 nav bar*/
+.headD{
+  display: none;/*초기화면에서 안보이게*/
+  position: absolute;
+  top:108.75px;
+  left:0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(255,255,255,0.2);
+}
+.headD ul{
+  display: flex;
+  margin-left: 16px;
+}
+.headD a{
+  display: block;
+  color:var(--text-dark-color);
+  font-weight: var(--font-weight-extrabold);
+  text-decoration: none;
+  line-height: 2em;
+  text-align: center;
+  margin-left: 15px;
+  opacity: 0.8;
+}
+.headD a:hover{
+  opacity: 1;
+}
 
  /*head media*/
 @media (max-width:767px){
@@ -218,62 +305,19 @@ header .item{
   .headB img{
     width:100px;
   }
-  .headC{
-    margin-left:var(--guideline-narrow);
-    padding: 0;
-    border:none;
-    outline: none;
-    background: none;
-    font-size: 16px;
-    color:var(--text-dark-color);
-    opacity: 0.8;
-    cursor:pointer;
-  }
-  .headC:hover{
-    opacity: 1;
-  }
-  .headD ul{
-    display: flex;
-    margin-left: 16px;
-  }
-  .headD a{
-    display: block;
-    color:var(--text-dark-color);
-    font-weight: var(--font-weight-extrabold);
-    text-decoration: none;
-    line-height: 2em;
-    text-align: center;
-    margin-left: 15px;
-    opacity: 0.8;
-  }
-  .headD a:hover{
-    opacity: 1;
-  }
-  .headD{
-    display: none;/*초기화면에서 안보이게*/
-    position: absolute;
-    top:108.75px;
-    left:0;
-    z-index: 100;
-    width: 100%;
-    background-color: rgba(255,255,255,0.2);
-  }
 }
 
 @media (min-width:768px){
-  .headA{
-    display: block !important;/*토글버튼 사용하다보면 리스트메뉴가 안나타나는 경우가 있어 방지하기*/
-  }
   .headA ul{
-    margin-left: 116px;/*131px(guideline wideaddnarrow)-15px(ul li margin left)*/
+    margin-left: var(--guideline-wide);
   }
   .headB img{
     right:var(--guideline-wideAddnarrow);
   }
   .headC{
-    display: none;/*큰화면에서는 토글버튼이 안보이게*/
+    display: none !important;/*큰화면에서는 토글버튼이 안보이게*/
   }
   .headD{
-    display: none;
+    display: none !important;/*jQuery override. 작은 화면에서 토글버튼과 연계되어 jQuery명령으로 display가 된 후에 화면 키워질 때 그대로 남아있음을 override로 방지*/
   }
 }
