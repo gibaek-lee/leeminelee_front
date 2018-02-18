@@ -37,8 +37,7 @@ p{
 /*콘텐츠A: 히어로 이미지*/
 .conA{
   display: flex;/*플렉시블 레이아웃 기능*/
-  /*align-items: center;*//*conA의 자식인 container 박스 자체를 상하 중앙 배치*/
-  justify-content: center;/*conA의 자식인 container 박스 자체를 좌우 중앙 배치*/
+  justify-content: center;/*conA의 자식 container 박스 자체를 좌우 중앙 배치*/
   height: 100vh;/*font-size에 사용한 vw 개념과 같음*/
   min-height: 500px;/*section크기 제한. 브라우저 크기 줄어들어도 최소 이 크기의 이미지는 출력됨*/
   background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(img/background.png);
@@ -68,7 +67,7 @@ p{
 
 /*콘텐츠B: 개요*/
 .conB{
-  position: relative;/*itemC를 포지션 레이아웃(부모 position relative, 자식 position absolute)으로 중앙 이미지쪽으로 위치 지정 위해서*/
+  position: relative;/*conB-small을 포지션 레이아웃(부모 position relative, 자식 position absolute)으로 중앙 이미지쪽으로 위치 지정 위해서*/
 }
 .conB .container{
   /*padding-top: 35px;*/
@@ -86,10 +85,11 @@ p{
 
  /*conB-small: 메인 이미지 안쪽으로 위치한 paragraph*/
 .conB-small{
-  position: absolute;/*부모가 반드시 relative여야 한다*/
+  position: absolute;/*부모 위치에 대해 상대적으로 위치 지정하려면 부모가 반드시 relative여야 한다*/
   right: 0;
   top: -77px;
   width: 100%;
+  /*div박스 위치가 background로 이미지 지정된 conA에 있으므로 z-index 값을 높게 주지 않아도 이미지 위로 보인다*/
 }
 .conB-small .container-small{
   max-width: var(--large-width);
@@ -275,7 +275,7 @@ header .item{
   position: absolute;
   top:108.75px;
   left:0;
-  z-index: 100;
+  /*z-index: 100;conA 이미지가 background라서 z-index사용할 필요 없는듯*/
   width: 100%;
   background-color: rgba(255,255,255,0.2);
 }
