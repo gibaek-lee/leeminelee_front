@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+/*gallery page*/
+.gallery * {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.gallery {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;/*컨텐츠가 공간을 100% 채우면 다음 행으로 컨텐츠를 내려서 정렬한다*/
+    padding: 0 4px;
+}
+
+.gallery .column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;/*flex item의 크기를 container의 25%로 정한다*/
+    max-width: 25%;/*column의 최대 넓이는 상위 박스의 25%까지*/
+    padding: 0 4px;
+}
+
+.gallery img {
+    margin-top: 8px;
+    vertical-align: middle;
+    opacity: 1;
+}
+.gallery img:hover{
+  opacity: 0.8;
+}
+
+/*gallery responsive*/
+@media (max-width: 800px) {
+    .gallery .column {/*작은 기기에서 2열으로 gallery 출력*/
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+</style>
+
+<body>
+<div class="gallery">
+  <div class="column">
+    <img src="img/portfolio/1.jpg" style="width:100%">
+    <img src="img/portfolio/2.jpg" style="width:100%">
+    <img src="img/portfolio/3.jpg" style="width:100%">
+    <img src="img/portfolio/4.jpg" style="width:100%">
+    <img src="img/portfolio/5.jpg" style="width:100%">
+    <img src="img/portfolio/6.jpg" style="width:100%">
+    <img src="img/portfolio/7.jpg" style="width:100%">
+    <img src="img/portfolio/8.jpg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="img/portfolio/9.jpg" style="width:100%">
+    <img src="img/portfolio/10.jpg" style="width:100%">
+    <img src="img/portfolio/11.jpg" style="width:100%">
+    <img src="img/portfolio/12.jpg" style="width:100%">
+    <img src="img/portfolio/13.jpg" style="width:100%">
+    <img src="img/portfolio/14.jpg" style="width:100%">
+    <img src="img/portfolio/15.jpg" style="width:100%">
+    <img src="img/portfolio/16.jpg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="img/portfolio/17.jpg" style="width:100%">
+    <img src="img/portfolio/18.jpg" style="width:100%">
+    <img src="img/portfolio/19.jpg" style="width:100%">
+    <img src="img/portfolio/20.jpg" style="width:100%">
+    <img src="img/portfolio/21.jpg" style="width:100%">
+    <img src="img/portfolio/22.jpg" style="width:100%">
+    <img src="img/portfolio/23.jpg" style="width:100%">
+    <img src="img/portfolio/24.jpg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="img/portfolio/25.jpg" style="width:100%">
+    <img src="img/portfolio/26.jpg" style="width:100%">
+    <img src="img/portfolio/27.jpg" style="width:100%">
+    <img src="img/portfolio/28.jpg" style="width:100%">
+    <img src="img/portfolio/29.jpg" style="width:100%">
+    <img src="img/portfolio/30.jpg" style="width:100%">
+    <img src="img/portfolio/31.jpg" style="width:100%">
+    <img src="img/portfolio/32.jpg" style="width:100%">
+  </div>
+</div>
+</body>
+</html>
