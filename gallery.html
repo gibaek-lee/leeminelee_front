@@ -2,90 +2,87 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styleGallery.css">
+  <link rel="stylesheet" href="styleModal.css">
 </head>
-<style>
-/*gallery page*/
-.gallery * {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-.gallery {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;/*컨텐츠가 공간을 100% 채우면 다음 행으로 컨텐츠를 내려서 정렬한다*/
-    padding: 0 4px;
-}
-
-.gallery .column {
-    -ms-flex: 25%; /* IE10 */
-    flex: 25%;/*flex item의 크기를 container의 25%로 정한다*/
-    max-width: 25%;/*column의 최대 넓이는 상위 박스의 25%까지*/
-    padding: 0 4px;
-}
-
-.gallery img {
-    margin-top: 8px;
-    vertical-align: middle;
-    opacity: 1;
-}
-.gallery img:hover{
-  opacity: 0.8;
-}
-
-/*gallery responsive*/
-@media (max-width: 800px) {
-    .gallery .column {/*작은 기기에서 2열으로 gallery 출력*/
-        -ms-flex: 50%;
-        flex: 50%;
-        max-width: 50%;
-    }
-}
-</style>
 
 <body>
 <div class="gallery">
   <div class="column">
-    <img src="img/portfolio/1.jpg" style="width:100%">
-    <img src="img/portfolio/2.jpg" style="width:100%">
-    <img src="img/portfolio/3.jpg" style="width:100%">
-    <img src="img/portfolio/4.jpg" style="width:100%">
-    <img src="img/portfolio/5.jpg" style="width:100%">
-    <img src="img/portfolio/6.jpg" style="width:100%">
-    <img src="img/portfolio/7.jpg" style="width:100%">
-    <img src="img/portfolio/8.jpg" style="width:100%">
+    <img class="source-img" src="img/portfolio/1.jpg" style="width:100%" onclick="modalFunction(1)">
+    <img class="source-img" src="img/portfolio/2.jpg" style="width:100%" onclick="modalFunction(2)">
+    <img class="source-img" src="img/portfolio/3.jpg" style="width:100%" onclick="modalFunction(3)">
+    <img class="source-img" src="img/portfolio/4.jpg" style="width:100%" onclick="modalFunction(4)">
+    <img class="source-img" src="img/portfolio/5.jpg" style="width:100%" onclick="modalFunction(5)">
+    <img class="source-img" src="img/portfolio/6.jpg" style="width:100%" onclick="modalFunction(6)">
+    <img class="source-img" src="img/portfolio/7.jpg" style="width:100%" onclick="modalFunction(7)">
+    <img class="source-img" src="img/portfolio/8.jpg" style="width:100%" onclick="modalFunction(8)">
   </div>
   <div class="column">
-    <img src="img/portfolio/9.jpg" style="width:100%">
-    <img src="img/portfolio/10.jpg" style="width:100%">
-    <img src="img/portfolio/11.jpg" style="width:100%">
-    <img src="img/portfolio/12.jpg" style="width:100%">
-    <img src="img/portfolio/13.jpg" style="width:100%">
-    <img src="img/portfolio/14.jpg" style="width:100%">
-    <img src="img/portfolio/15.jpg" style="width:100%">
-    <img src="img/portfolio/16.jpg" style="width:100%">
+    <img class="source-img" src="img/portfolio/9.jpg" style="width:100%" onclick="modalFunction(9)">
+    <img class="source-img" src="img/portfolio/10.jpg" style="width:100%" onclick="modalFunction(10)">
+    <img class="source-img" src="img/portfolio/11.jpg" style="width:100%" onclick="modalFunction(11)">
+    <img class="source-img" src="img/portfolio/12.jpg" style="width:100%" onclick="modalFunction(12)">
+    <img class="source-img" src="img/portfolio/13.jpg" style="width:100%" onclick="modalFunction(13)">
+    <img class="source-img" src="img/portfolio/14.jpg" style="width:100%" onclick="modalFunction(14)">
+    <img class="source-img" src="img/portfolio/15.jpg" style="width:100%" onclick="modalFunction(15)">
+    <img class="source-img" src="img/portfolio/16.jpg" style="width:100%" onclick="modalFunction(16)">
   </div>
   <div class="column">
-    <img src="img/portfolio/17.jpg" style="width:100%">
-    <img src="img/portfolio/18.jpg" style="width:100%">
-    <img src="img/portfolio/19.jpg" style="width:100%">
-    <img src="img/portfolio/20.jpg" style="width:100%">
-    <img src="img/portfolio/21.jpg" style="width:100%">
-    <img src="img/portfolio/22.jpg" style="width:100%">
-    <img src="img/portfolio/23.jpg" style="width:100%">
-    <img src="img/portfolio/24.jpg" style="width:100%">
+    <img class="source-img" src="img/portfolio/17.jpg" style="width:100%" onclick="modalFunction(17)">
+    <img class="source-img" src="img/portfolio/18.jpg" style="width:100%" onclick="modalFunction(18)">
+    <img class="source-img" src="img/portfolio/19.jpg" style="width:100%" onclick="modalFunction(19)">
+    <img class="source-img" src="img/portfolio/20.jpg" style="width:100%" onclick="modalFunction(20)">
+    <img class="source-img" src="img/portfolio/21.jpg" style="width:100%" onclick="modalFunction(21)">
+    <img class="source-img" src="img/portfolio/22.jpg" style="width:100%" onclick="modalFunction(22)">
+    <img class="source-img" src="img/portfolio/23.jpg" style="width:100%" onclick="modalFunction(23)">
+    <img class="source-img" src="img/portfolio/24.jpg" style="width:100%" onclick="modalFunction(24)">
   </div>
   <div class="column">
-    <img src="img/portfolio/25.jpg" style="width:100%">
-    <img src="img/portfolio/26.jpg" style="width:100%">
-    <img src="img/portfolio/27.jpg" style="width:100%">
-    <img src="img/portfolio/28.jpg" style="width:100%">
-    <img src="img/portfolio/29.jpg" style="width:100%">
-    <img src="img/portfolio/30.jpg" style="width:100%">
-    <img src="img/portfolio/31.jpg" style="width:100%">
-    <img src="img/portfolio/32.jpg" style="width:100%">
+    <img class="source-img" src="img/portfolio/25.jpg" style="width:100%" onclick="modalFunction(25)">
+    <img class="source-img" src="img/portfolio/26.jpg" style="width:100%" onclick="modalFunction(26)">
+    <img class="source-img" src="img/portfolio/27.jpg" style="width:100%" onclick="modalFunction(27)">
+    <img class="source-img" src="img/portfolio/28.jpg" style="width:100%" onclick="modalFunction(28)">
+    <img class="source-img" src="img/portfolio/29.jpg" style="width:100%" onclick="modalFunction(29)">
+    <img class="source-img" src="img/portfolio/30.jpg" style="width:100%" onclick="modalFunction(30)">
+    <img class="source-img" src="img/portfolio/31.jpg" style="width:100%" onclick="modalFunction(31)">
+    <img class="source-img" src="img/portfolio/32.jpg" style="width:100%" onclick="modalFunction(32)">
   </div>
 </div>
+
+<!-- The Modal 공통. 20180224-->
+  <!--independent div박스-->
+<div id="modal-container" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content">
+  <!--<div id="caption"></div>-->
+</div>
+
+  <!--modal script-->
+<script>
+// Get the modal 공통
+var modal = document.getElementById('modal-container');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+function modalFunction(imgNum){
+  var sourceImg = document.getElementsByClassName("source-img");
+  var modalImg = document.getElementsByClassName("modal-content");
+  //var captionText = document.getElementById("caption");
+
+  modal.style.display = "block";
+  modalImg[0].src = sourceImg[imgNum-1].src;
+  //captionText.innerHTML = sourceImg[imgNum-1].alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];// getElements 이므로 [0]이라고 해야 버튼이 선택됨
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+<!-- The Modal 공통. 20180224-->
+
 </body>
 </html>
