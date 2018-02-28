@@ -29,7 +29,7 @@
 }
 
 /*gallery responsive*/
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .gallery .column {/*작은 기기에서 2열으로 gallery 출력*/
         -ms-flex: 50%;
         flex: 50%;

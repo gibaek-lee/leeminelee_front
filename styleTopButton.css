@@ -1,0 +1,20 @@
+#topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 1; /* Make sure it does not overlap. modal container가 생기면 비활성화되게 하고 gallery 보다는 높은 index로 해야함*/
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #58585b; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    opacity: 0.7;
+}
+
+#topBtn:hover {
+    opacity: 1; /* Add a dark-grey background on hover */
+}

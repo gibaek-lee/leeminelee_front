@@ -1,9 +1,9 @@
 /* The Modal (background) */
-.modal {
+#modal-container {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  z-index: 2; /* Sit on top */
+  padding-top:0px; /*Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -14,16 +14,15 @@
 }
 
 /* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
+#modal-content {
+  margin: auto;/*contents horizontally center*/
+  display: none;/*hhhh*/
   width: 80%;
-  max-width: 100%;
+  max-width: 100%;/*작은 기기에서 화면의 100%까지 이미지 늘어나도록*/
   opacity: 1;
   animation-name: transparency;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
 }
-
 /*opacity animation*/
 @keyframes transparency{
   from{opacity: 0.5;}
@@ -31,17 +30,18 @@
 }
 
 /* The Close Button */
-.close {
+#close {
+  z-index: 3;/*긴 이미지가 나오면 가려져 버튼이 활성화 안되는 것 방지*/
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 10px;
+  right: 30px;
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
 }
-.close:hover,
-.close:focus {
+#close:hover,
+#close:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
@@ -49,8 +49,12 @@
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 800px){
-  .modal-content {
-  width: 100%;
+  #modal-content {
+    width: 100%;
+  }
+  #close{
+    top: 0px;
+    right: 20px;
   }
 }
 
@@ -69,7 +73,7 @@
 */
 /* Add Animation */
 /*
-.modal-content, #caption {
+#modal-content, #caption {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
