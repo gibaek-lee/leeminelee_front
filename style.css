@@ -161,10 +161,10 @@ p{
 }
 @media (min-width:415px){
   .conB a{
-    opacity: 0.8;
+    opacity: 1;
   }
   .conB a:hover{
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 @media (min-width:495px){
@@ -236,10 +236,10 @@ header .item{
 }
 
 .headA a{
-  opacity: 0.8;
+  opacity: 1;
 }
 .headA a:hover{
-  opacity: 1;
+  opacity: 0.8;
 }
 
  /*headB: svg log 이미지 absolute positioning*/
@@ -269,38 +269,20 @@ header .item{
   opacity: 1;
 }
 
- /*headD: 작은기기에서 nav bar*/
-.headD{
-  display: none;/*초기화면에서 안보이게*/
-  position: absolute;
-  top:108.75px;
-  left:0;
-  /*z-index: 100;conA 이미지가 background라서 z-index사용할 필요 없는듯*/
-  width: 100%;
-  background-color: rgba(255,255,255,0.2);
-}
-.headD ul{
-  display: flex;
-  margin-left: 16px;
-}
-.headD a{
-  display: block;
-  color:var(--text-dark-color);
-  font-weight: var(--font-weight-extrabold);
-  text-decoration: none;
-  line-height: 2em;
-  text-align: center;
-  margin-left: 15px;
-  opacity: 0.8;
-}
-.headD a:hover{
-  opacity: 1;
-}
-
  /*head media*/
 @media (max-width:767px){
   .headA{
-    display: none;/*작은화면에서는 리스트메뉴가 안보이게*/
+    display: none; /*작은화면에서는 리스트메뉴가 안보이게*/
+    position: absolute;
+    top:108px;
+    left:0;
+    /*z-index: 100;conA 이미지가 background라서 z-index사용할 필요 없는듯*/
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+  }
+  .headA ul{
+    padding-bottom:35px;
+    border-left: 0;
   }
   .headB img{
     width:100px;
@@ -308,6 +290,9 @@ header .item{
 }
 
 @media (min-width:768px){
+  .headA{
+    display: block !important;
+  }
   .headA ul{
     margin-left: var(--guideline-wide);
   }
@@ -316,8 +301,5 @@ header .item{
   }
   .headC{
     display: none !important;/*큰화면에서는 토글버튼이 안보이게*/
-  }
-  .headD{
-    display: none !important;/*jQuery override. 작은 화면에서 토글버튼과 연계되어 jQuery명령으로 display가 된 후에 화면 키워질 때 그대로 남아있음을 override로 방지*/
   }
 }

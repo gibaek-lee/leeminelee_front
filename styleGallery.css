@@ -10,12 +10,15 @@
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;/*컨텐츠가 공간을 100% 채우면 다음 행으로 컨텐츠를 내려서 정렬한다*/
     padding: 0 4px;
+    max-width: 1279px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gallery .column {
-    -ms-flex: 25%; /* IE10 */
-    flex: 25%;/*flex item의 크기를 container의 25%로 정한다*/
-    max-width: 25%;/*column의 최대 넓이는 상위 박스의 25%까지*/
+    -ms-flex: 33.3333%; /* IE10 */
+    flex: 33.3333%;/*flex item의 크기를 container의 33.3333%로 정한다*/
+    max-width: 33.3333%;/*column의 최대 넓이는 상위 박스의 33.3333%까지*/
     padding: 0 4px;
 }
 
