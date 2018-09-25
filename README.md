@@ -20,12 +20,12 @@ Interactive Web Page Design
 click [here](https://ginnyang2.github.io/leeminelee_front/)<br>
 
 <p align="center">
-  <img width="100%" src="img/design_guide_1.png">
+  <img width="100%" src="img/readme/design_guide_1.png">
   <b>Design Guide - Index Page Example</b>
 </p>
 
 <p align="center">
-  <img width="100%" src="img/design_guide_2.png">
+  <img width="100%" src="img/readme/design_guide_2.png">
   <b>Design Guide - Markup Guide</b>
 </p>
 
