@@ -17,7 +17,7 @@ Interactive Web Page Design
 - Zoom pages, main and gallery.
 - Change devices. If you don't have other devices, can check via Web browser dev tools. For example, in chrome, click the 'Toggle device toolbar' after open Chrome dev tools via shortcuts key, 'ctrl+shift+i'.
 
-click [here](https://ginnyang2.github.io/leeminelee_front/)<br>
+GitHubPages click [here](https://ginnyang2.github.io/leeminelee_front/)<br>
 
 <p align="center">
   <b>Design Guide - Index Page Example</b><br>
