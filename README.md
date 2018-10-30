@@ -7,6 +7,8 @@ Responsive Web Design, Media Queries applied. Multi devices application.
 Interactive Web Page Design
 - jQuery and Vanilla javascript(DOM)
 
+![](./video/responsiveWebLeeminelee.gif)
+
 ## CSS Styling Major
 - Size responsive: use Media query(@media)
 - Display: apply Flexbox layout(display: flex)
