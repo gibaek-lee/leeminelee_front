@@ -17,16 +17,16 @@ Interactive Web Page Design
 - Zoom pages, main and gallery.
 - Change devices. If you don't have other devices, can check via Web browser dev tools. For example, in chrome, click the 'Toggle device toolbar' after open Chrome dev tools via shortcuts key, 'ctrl+shift+i'.
 
-click [here](https://ginnyang2.github.io/leeminelee_front/)<br>
+GitHubPages click [here](https://ginnyang2.github.io/leeminelee_front/)<br>
 
 <p align="center">
-  <img width="100%" src="img/readme/design_guide_1.png">
-  <b>Design Guide - Index Page Example</b>
+  <b>Design Guide - Index Page Example</b><br>
+  <img width="70%" src="img/readme/design_guide_1.png">
 </p>
 
 <p align="center">
-  <img width="100%" src="img/readme/design_guide_2.png">
-  <b>Design Guide - Markup Guide</b>
+  <b>Design Guide - Markup Guide</b><br>
+  <img width="70%" src="img/readme/design_guide_2.png">
 </p>
 
 ## References
